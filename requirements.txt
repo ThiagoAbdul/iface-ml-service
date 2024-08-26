@@ -1,1 +1,11 @@
+numpy
+pandas
+scikit-learn
+keras
 fastapi[standard]
+dlib
+face-recognition
+cmake
+opencv-python
+pillow
+tensorflow
