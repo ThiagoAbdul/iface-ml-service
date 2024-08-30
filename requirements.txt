@@ -1,11 +1,19 @@
-numpy
-pandas
-scikit-learn
-keras
-fastapi[standard]
-dlib
-face-recognition
-cmake
-opencv-python
-pillow
-tensorflow
+# numpy
+# pandas
+# scikit-learn
+# keras
+# fastapi[standard]
+# dlib
+# face-recognition
+# cmake
+# opencv-python
+# pillow
+# tensorflow
+
+numpy~=1.26.4
+tensorflow~=2.17.0
+keras~=3.5.0
+pillow~=10.4.0
+opencv-python~=4.10.0.84
+dlib~=19.24.6
+matplotlib~=3.9.2

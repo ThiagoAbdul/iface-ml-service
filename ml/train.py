@@ -2,11 +2,10 @@ import gc
 import numpy as np
 from sklearn.model_selection import train_test_split
 from face_detect import get_face_image_from_bytes
-from keras import callbacks, utils, applications, optimizers, Sequential, Layer, layers, losses, datasets
+from keras import callbacks, utils, applications, optimizers, Sequential, Layer, layers, losses, datasets, preprocessing
 import tensorflow as tf
 import pathlib
 from PIL import Image
-
 
 # def get_image_as_bytes(img_path: str):
 #     # f = open(img_path, "rb")
@@ -18,25 +17,23 @@ epoch = 300
 batch_size = 64
 img_height = 28
 img_width = 28
-data_dir = pathlib.Path("dataset").with_suffix('')
+data_dir = pathlib.Path("dataset/train").with_suffix('')
 
-
-
-train_ds = utils.image_dataset_from_directory(
-  data_dir,
-  validation_split=0.2,
-  subset="training",
-  seed=123,
-  image_size=(img_height, img_width),
-  batch_size=batch_size)
+train_ds = preprocessing.image_dataset_from_directory(
+    data_dir,
+    validation_split=0.2,
+    subset="training",
+    seed=123,
+    image_size=(img_height, img_width),
+    batch_size=batch_size)
 
 val_ds = utils.image_dataset_from_directory(
-  data_dir,
-  validation_split=0.2,
-  subset="validation",
-  seed=123,
-  image_size=(img_height, img_width),
-  batch_size=batch_size)
+    data_dir,
+    validation_split=0.2,
+    subset="validation",
+    seed=123,
+    image_size=(img_height, img_width),
+    batch_size=batch_size)
 
 # # image_array = []
 # # label_array = []

@@ -2,7 +2,7 @@ import face_recognition as fr
 import cv2
 import numpy as np
 
-img1 = cv2.cvtColor(fr.load_image_file("./src/assets/img1.jpg"), cv2.COLOR_BGR2RGB)
+img1 = cv2.cvtColor(fr.load_image_file("./src/assets/img1.jpeg"), cv2.COLOR_BGR2RGB)
 img2 = cv2.cvtColor(fr.load_image_file("./src/assets/img3.jpg"), cv2.COLOR_BGR2RGB)
 encode_img1 = fr.face_encodings(img1)[0]
 encode_img2 = fr.face_encodings(img2)[0]
